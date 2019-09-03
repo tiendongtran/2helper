@@ -66,7 +66,7 @@ body {font-family: "Lato", sans-serif;}
   border: 1px solid #ccc;
   background-color: #f1f1f1;
   width: 30%;
-  height: 370px;
+  height: 350px;
 }
 
 /* Style the buttons inside the tab */
@@ -229,11 +229,20 @@ body {font-family: "Lato", sans-serif;}
   </div>
 </div>
 </div>
-        <br>Race/Type<br>
+       <br>
+       <input type="text" placeholder="Name/Title" 
+		onfocus="this.placeholder=''" 
+		onblur="this.placeholder='Name/Title'">
+		<br>       
+	   <br>Race/Type<br>
         <input type="text">
 		<br>
 		<br>Gender<br>
-        <input type="text">
+        <select>
+          <option>Male</option>
+          <option>Female</option>
+          <option>Other</option>
+        </select>
 		<br>
 		<br>Age<br>
         <input type="text">
@@ -286,6 +295,11 @@ body {font-family: "Lato", sans-serif;}
   </div>
 </div>
 </div>
+<br>
+       <input type="text" placeholder="Name/Title." 
+		onfocus="this.placeholder=''" 
+		onblur="this.placeholder='Name/Title.'">
+		<br>             
 <br><div class="col-sm-8">Timeline</div> <select>
           <option>Current</option>
           <option>Past</option>
@@ -321,6 +335,11 @@ body {font-family: "Lato", sans-serif;}
  <input type="file" accept="image/*" onchange="preview_image(event)">
  <img id="output_image"/>
 </div>
+<br>
+       <input type="text" placeholder="Name/Title." 
+		onfocus="this.placeholder=''" 
+		onblur="this.placeholder='Name/Title.'">
+		<br>       
 		<br>Purpose<br>
         <input type="text">
 		<br>
@@ -334,6 +353,12 @@ body {font-family: "Lato", sans-serif;}
 		</div>
 		
 <div id="story" class="tabcontent">
+<br>
+       <input type="text" placeholder="Name/Title." 
+		onfocus="this.placeholder=''" 
+		onblur="this.placeholder='Name/Title.'">
+		<br>       
+		<br>
 <textarea placeholder="Write something.." onfocus="this.placeholder=''" onblur="this.placeholder='Write something..'" style="height:340px"></textarea>
 <br> <input id="files" type="file" multiple/>
         <output id="result" />
@@ -361,6 +386,24 @@ body {font-family: "Lato", sans-serif;}
 		<br>
 
 <div class="clearfix"></div>
+
+
+<br>
+<div class="col-sm-4">
+<h4>Once done> click and choose "Save as PDF" (or save to Goole Drive)</h4>
+<h5>*per selection</h5>
+
+<button onclick="myFunction()"><h4>Print/Save</h4></button>
+</div>
+<br>
+<br>
+
+<script>
+function myFunction() {
+  window.print();
+}
+</script>
+
 
 <script>
 function openCity(evt, cityName) {
