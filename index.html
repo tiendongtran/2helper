@@ -174,11 +174,11 @@ body {font-family: "Lato", sans-serif;}
 <h2>Plan/Guide/Ideas</h2>
 
 <div class="tab">
+  <button class="tablinks" onmouseover="openCity(event, 'misc')">Start</button>
   <button class="tablinks" onmouseover="openCity(event, 'character')">Character</button>
   <button class="tablinks" onmouseover="openCity(event, 'environment')">Environment</button>
   <button class="tablinks" onmouseover="openCity(event, 'object')">Object</button>
   <button class="tablinks" onmouseover="openCity(event, 'story')">Details: Story/Situation</button>
-  <button class="tablinks" onmouseover="openCity(event, 'misc')">Misc</button>
 </div>
 
 <div id="character" class="tabcontent" >
@@ -228,11 +228,10 @@ body {font-family: "Lato", sans-serif;}
     <p>remove</p>
   </div>
 </div>
-</div>
-       <br>
-       <input type="text" placeholder="Name/Title" 
+</div><br>Name/Title<br>
+       <input type="text" placeholder="Fat doggo in halloween costume" 
 		onfocus="this.placeholder=''" 
-		onblur="this.placeholder='Name/Title'">
+		onblur="this.placeholder='Sexy noble goth catgirl'">
 		<br>       
 	   <br>Race/Type<br>
         <input type="text">
@@ -256,7 +255,7 @@ body {font-family: "Lato", sans-serif;}
 		<br>Traits<br>
         <input type="text" placeholder="looks, personality, good-bad at, like-dislike, lifestyle.." 
 		onfocus="this.placeholder=''" 
-		onblur="this.placeholder='looks, personality, good-bad at, like-dislike, lifestyle..'">
+		onblur="this.placeholder='smug anime grill'">
 		<br>
 		
 		<br>Clothing/Equipment<br>
@@ -298,18 +297,11 @@ body {font-family: "Lato", sans-serif;}
   </div>
 </div>
 </div>
-<br>
-       <input type="text" placeholder="Name/Title." 
+<br><br>Name/Title<br>
+       <input type="text" placeholder="Moonbase Restaurant" 
 		onfocus="this.placeholder=''" 
-		onblur="this.placeholder='Name/Title.'">
-		<br>             
-<br><div class="col-sm-8">Timeline</div> <select>
-          <option>Current</option>
-          <option>Past</option>
-          <option>Future</option>
-		  <option>Alternate Timeline</option>
-        </select>
-		<br>
+		onblur="this.placeholder='Underwater Castle'">
+		<br>       
 		<br>Time of the day<br>
         <input type="text">
 		<br>
@@ -338,10 +330,10 @@ body {font-family: "Lato", sans-serif;}
  <input type="file" accept="image/*" onchange="preview_image(event)">
  <img id="output_image"/>
 </div>
-<br>
-       <input type="text" placeholder="Name/Title." 
+<br><br>Name/Title<br>
+       <input type="text" placeholder="Mini cute mushroom house" 
 		onfocus="this.placeholder=''" 
-		onblur="this.placeholder='Name/Title.'">
+		onblur="this.placeholder='Veri fast looking medic helicopter'">
 		<br>       
 		<br>Purpose<br>
         <input type="text">
@@ -350,7 +342,7 @@ body {font-family: "Lato", sans-serif;}
         <input type="text">
 		<br>
 	<br>Details<br><br>
-		<textarea id="subject" name="subject" placeholder="What it is?" onfocus="this.placeholder=''" onblur="this.placeholder='What it is?'" style="height:200px"></textarea>
+		<textarea id="subject" name="subject" style="height:200px"></textarea>
 
 		
 		</div>
@@ -368,6 +360,20 @@ body {font-family: "Lato", sans-serif;}
 </div>
 
 <div id="misc" class="tabcontent" style="display:block">
+Goal<br>
+        <select>
+          <option>Sketch</option>
+          <option>Flat colors</option>
+          <option>Full Rendering</option>
+        </select>
+		<br>
+		<br>Timeline<select>
+          <option>Current</option>
+          <option>Past</option>
+          <option>Future</option>
+		  <option>Alternate Timeline</option>
+        </select>
+		<br>
 <br>Setting/Era<br>
         <input type="text" placeholder="Modern, Scifi, Fantasy..." onfocus="this.placeholder=''" onblur="this.placeholder='Modern, Scifi, Fantasy, ..'" </text>
 		<br>
@@ -382,8 +388,8 @@ body {font-family: "Lato", sans-serif;}
 		  <option>unlimited</option>
         </select>
 		<br>
-		<br>Extra<br>
-        <input type="text" placeholder="Anything else?" onfocus="this.placeholder=''" onblur="this.placeholder='Anything else?'" </text>
+		<br>Note<br>
+        <input type="text" placeholder="..." onfocus="this.placeholder=''" onblur="this.placeholder='Anything else?'" </text>
 		<br>
 </div>
 		<br>
