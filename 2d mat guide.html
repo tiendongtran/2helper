@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+* {
+  box-sizing: border-box;
+}
+
+/* Create two equal columns that floats next to each other */
+.column {
+  float: left;
+  width: 50%;
+  padding: 10px;
+  height: 300px; /* Should be removed. Only for demonstration */
+}
+
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+</style>
+<style>
+.tooltip {
+  position: relative;
+  display: inline-block;
+  border-bottom: 1px dotted black;
+}
+
+.tooltip .tooltiptext {
+  visibility: hidden;
+  width: 120px;
+  background-color: #555;
+  color: #fff;
+  text-align: center;
+  border-radius: 6px;
+  padding: 5px 0;
+  position: absolute;
+  z-index: 1;
+  bottom: 125%;
+  left: 50%;
+  margin-left: -60px;
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+.tooltip .tooltiptext::after {
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  margin-left: -5px;
+  border-width: 5px;
+  border-style: solid;
+  border-color: #555 transparent transparent transparent;
+}
+
+.tooltip:hover .tooltiptext {
+  visibility: visible;
+  opacity: 1;
+}
+</style>
+</head>
+<body>
+
+
+<div class="row">
+  <div class="column">
+   Soft - Hard<br>
+ <input type="range" min="1" max="100" value="50" class="slider" id="myRange2">
+<br>
+
+  Thin - Thickness<br>
+ <input type="range" min="1" max="100" value="50" class="slider" id="myRange3">
+<br>
+  
+  Light - Heavy<br>
+ <input type="range" min="1" max="100" value="50" class="slider" id="myRange4">
+<br>
+ <label class="container">Layer
+  <input type="checkbox">
+  <input type="checkbox">
+  <input type="checkbox">
+  <span class="checkmark"></span>
+</label>
+<label class="container">of Layer
+  <input type="checkbox"><input type="checkbox"><input type="checkbox">
+  <span class="checkmark"></span>
+</label>
+  </div>
+  <div class="column">
+    <div class="slidecontainer">
+ Emissive (light) <br>
+ <input type="range" min="0" max="100" value="0" class="slider" id="myRange">
+ <br>
+Roughness (<div class="tooltip">Smooth
+  <span class="tooltiptext">Reflect</span>
+</div> or <div class="tooltip">Rough
+  <span class="tooltiptext">Diffuse</span>
+</div>)<br>
+ <input type="range" min="1" max="100" value="50" class="slider" id="myRange1">
+<br>
+Transparency<br>
+ <input type="range" min="0" max="100" value="0" class="slider" id="myRange0">
+ <br>
+ <label class="container">Metal
+  <input type="checkbox">
+  <span class="checkmark"></span>
+</label>
+<label class="container">SSS
+  <input type="checkbox">
+  <span class="checkmark"></span>
+</label>
+
+  </div>
+</div>
+
+
+</body>
+</html>
