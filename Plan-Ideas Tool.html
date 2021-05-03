@@ -1,0 +1,719 @@
+<!DOCTYPE html>
+<!-- saved from url=(0039)https://tiendongtran.github.io/2helper/ -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<link rel="icon" href="https://img.icons8.com/flat_round/64/000000/checkmark.png">
+	<title>Plan-Ideas Tool</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+
+@media print {
+    .noprint {
+        display: none;
+    }
+}
+
+* {
+  box-sizing: border-box;
+}
+
+input[type=text], select, textarea {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  resize: vertical;
+}
+
+label {
+  padding: 12px 12px 12px 0;
+  display: inline-block;
+}
+
+input[type=submit]:hover {
+  background-color: #45a049;
+}
+
+.container {
+  border-radius: 5px;
+  background-color: #f2f2f2;
+  padding: 20px;
+}
+
+.col-25 {
+  float: left;
+  width: 25%;
+  margin-top: 6px;
+}
+
+.col-75 {
+  float: left;
+  width: 75%;
+  margin-top: 6px;
+}
+
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* Responsive layout - when the screen is less than 600px wide, make the two columns stack on top of each other instead of next to each other */
+@media screen and (max-width: 600px) {
+  .col-25, .col-75, input[type=submit] {
+    width: 100%;
+    margin-top: 0;
+  }
+}
+* {box-sizing: border-box}
+body {font-family: "Lato", sans-serif;}
+
+/* Style the tab */
+.tab {
+  float: left;
+  border: 1px solid #ccc;
+  background-color: #f1f1f1;
+  width: 30%;
+  height: 350px;
+}
+
+/* Style the buttons inside the tab */
+.tab button {
+  display: block;
+  background-color: inherit;
+  color: black;
+  padding: 22px 16px;
+  width: 100%;
+  border: none;
+  outline: none;
+  text-align: left;
+  cursor: pointer;
+  font-size: 17px;
+}
+
+/* Change background color of buttons on hover */
+.tab button:hover {
+  background-color: #ddd;
+}
+
+/* Create an active/current "tab button" class */
+.tab button.active {
+  background-color: #ccc;
+}
+
+/* Style the tab content */
+.tabcontent {
+  float: left;
+  padding: 0px 12px;
+  width: 70%;
+  border-left: none;
+  height: 10px;
+  display: none;
+}
+
+/* Clear floats after the tab */
+.clearfix::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+</style>
+
+<style>
+#output_image
+{
+ max-width:200px;
+}
+</style>
+<style>article
+{
+    width: 80%;
+    margin:auto;
+    margin-top:10px;
+}
+
+
+.thumbnail{
+
+    height: 120px;
+    margin: 10px;    
+}
+</style>
+
+<style>.image-upload-footer p{
+	display: inline
+}
+.image-upload  input[type=file]{
+    display: none;
+}
+.image-upload label{
+	margin-bottom: 0;
+}
+.image-upload img{
+	cursor: pointer;
+}
+.profileback .deleteThis{
+	position: absolute;
+    top: 6px;
+    right: 21px;
+    padding: 0;
+}
+.deleteThis span{
+	color: #fff
+}
+.image-upload-footer{
+	background-color: rgba(34, 34, 34, 0.87);
+ 	margin-top: -6px;
+ 	padding: 4px 10px;
+}
+.image-upload-footer button{
+    padding: 0px 5px;
+    border-radius: 100%;
+    margin-left: 15px;
+}
+.image-upload-footer button span,.image-upload-footer p{
+	color: #fff ;
+}</style>
+
+</head>
+<body>
+
+
+<h2>Plan/Guide/Ideas</h2>
+
+<div class="tab">
+  <button class="tablinks active" onmouseover="openCity(event, &#39;misc&#39;)">Start</button>
+  <button class="tablinks" onmouseover="openCity(event, &#39;character&#39;)">Character</button>
+  <button class="tablinks" onmouseover="openCity(event, &#39;environment&#39;)">Environment</button>
+  <button class="tablinks" onmouseover="openCity(event, &#39;object&#39;)">Object</button>
+  <button class="tablinks" onmouseover="openCity(event, &#39;story&#39;)">Details: Story/Situation</button>
+</div>
+
+<div id="character" class="tabcontent" style="display: none;">
+<script src="./Plan-Ideas Tool_files/jquery.min.js.download"></script>
+<link href="./Plan-Ideas Tool_files/bootstrap.min.css" rel="stylesheet">
+<script src="./Plan-Ideas Tool_files/bootstrap.min.js.download"></script>
+<script src="./Plan-Ideas Tool_files/jquery-3.0.0.min.js.download"></script>
+
+<div class="col-sm-4">
+  <div class="image-upload">
+    <label for="inputFile1">
+      <img id="image_upload_preview1" class="img-responsive mainPic" src="./Plan-Ideas Tool_files/150x150">
+    </label>
+    <input id="inputFile1" class="input-file" type="file">
+    <div class="image-upload-footer" style="display:none">
+      <button type="reset" custattr="http://placehold.it/150x150" class="btn btn-red reset">
+        <span class="fa fa-times" aria-hidden="true">X</span>
+      </button>
+      <p>remove</p>
+    </div>
+  </div>
+</div>
+<div class="col-sm-4">
+  <div class="image-upload">
+  <label for="inputFile2">
+    <img id="image_upload_preview2" class="img-responsive" src="./Plan-Ideas Tool_files/150x150" alt="">
+  </label>
+  <input id="inputFile2" class="input-file" type="file">
+  <div class="image-upload-footer" style="display:none">
+    <button type="button" custattr="http://placehold.it/150x150" class="btn btn-red reset">
+      <span class="fa fa-times" aria-hidden="true">X</span>
+    </button>
+    <p>remove</p>
+  </div>
+</div>
+</div>
+<div class="col-sm-4">
+  <div class="image-upload">
+  <label for="inputFile3">
+    <img id="image_upload_preview3" class="img-responsive" src="./Plan-Ideas Tool_files/150x150" alt="">
+  </label>
+  <input id="inputFile3" class="input-file" type="file">
+  <div class="image-upload-footer" style="display:none">
+    <button type="button" custattr="http://placehold.it/150x150" class="btn btn-red reset">
+      <span class="fa fa-times" aria-hidden="true">X</span>
+    </button>
+    <p>remove</p>
+  </div>
+</div>
+</div><br>Name/Title<br>
+       <input type="text" placeholder="Fat doggo in halloween costume" onfocus="this.placeholder=&#39;&#39;" onblur="this.placeholder=&#39;Sexy noble goth catgirl&#39;">
+		<br>       
+	   <br>Race/Type<br>
+        <input type="text">
+		<br>
+		<br>Gender<br>
+        <select>
+          <option>Male</option>
+          <option>Female</option>
+          <option>Other</option>
+        </select>
+		<br>
+		<br>Age<br>
+        <input type="text">
+		<br>
+		<br>Skin Type/Color<br>
+        <input type="text">
+		<br>
+		<br>Job/Class/Rank<br>
+        <input type="text">
+		<br>
+		<br>Traits<br>
+        <input type="text" placeholder="looks, personality, good-bad at, like-dislike, lifestyle.." onfocus="this.placeholder=&#39;&#39;" onblur="this.placeholder=&#39;smug anime grill&#39;">
+		<br>
+		
+		<br>Clothing/Equipment<br>
+        <input type="text">
+		<br>Skills<br>
+        <input type="text">
+		<br>
+		<br>Backstory/Story<br>
+		<textarea placeholder="Write something.." onfocus="this.placeholder=&#39;&#39;" onblur="this.placeholder=&#39;Write something..&#39;" style="height:200px"></textarea>
+
+		</div>
+
+<div id="environment" class="tabcontent" style="display: none;">
+<div class="col-sm-4">
+  <div class="image-upload">
+  <label for="inputFile4">
+    <img id="image_upload_preview4" class="img-responsive" src="./Plan-Ideas Tool_files/150x150" alt="">
+  </label>
+  <input id="inputFile4" class="input-file" type="file">
+  <div class="image-upload-footer" style="display:none">
+    <button type="button" custattr="http://placehold.it/150x150" class="btn btn-red reset">
+      <span class="fa fa-times" aria-hidden="true">X</span>
+    </button>
+    <p>remove</p>
+  </div>
+</div>
+</div>
+<div class="col-sm-4">
+  <div class="image-upload">
+  <label for="inputFile5">
+    <img id="image_upload_preview5" class="img-responsive" src="./Plan-Ideas Tool_files/150x150" alt="">
+  </label>
+  <input id="inputFile5" class="input-file" type="file">
+  <div class="image-upload-footer" style="display:none">
+    <button type="button" custattr="http://placehold.it/150x150" class="btn btn-red reset">
+      <span class="fa fa-times" aria-hidden="true">X</span>
+    </button>
+    <p>remove</p>
+  </div>
+</div>
+</div>
+<br><br>Name/Title<br>
+       <input type="text" placeholder="Moonbase Restaurant" onfocus="this.placeholder=&#39;&#39;" onblur="this.placeholder=&#39;Underwater Castle&#39;">
+		<br>       
+		<br>Time of the day<br>
+        <input type="text">
+		<br>
+<br>Location<br>
+        <input type="text" placeholder="Command room - Space station - Above Earth" onfocus="this.placeholder=&#39;&#39;" onblur="this.placeholder=&#39;A - at B - at C&#39;">
+		<br>
+		<br>Scenery<br>
+        <input type="text">
+		<br>
+<br>Weather<br>
+        <input type="text">
+		<br>
+		<br>Mood (Feels)<br>
+        <input type="text">
+		<br>
+<br>
+		Details:<br>
+        <textarea placeholder="Write something.." onfocus="this.placeholder=&#39;&#39;" onblur="this.placeholder=&#39;Write something..&#39;" style="height:200px"></textarea>
+      </div>
+
+
+<div id="object" class="tabcontent" style="display: none;">
+<div id="wrapper">
+ <input type="file" accept="image/*" onchange="preview_image(event)">
+ <img id="output_image">
+</div>
+<br><br>Name/Title<br>
+       <input type="text" placeholder="Mini cute mushroom house" onfocus="this.placeholder=&#39;&#39;" onblur="this.placeholder=&#39;Veri fast looking medic helicopter&#39;">
+		<br>       
+		<br>Purpose<br>
+        <input type="text">
+		<br>
+		<br>Materials<br>
+        <input type="text">
+		<br>
+	<br>Details<br><br>
+		<textarea id="subject" name="subject" style="height:200px"></textarea>
+
+		
+		</div>
+		
+<div id="story" class="tabcontent" style="display: none;">
+<br>
+       <input type="text" placeholder="Name/Title." onfocus="this.placeholder=&#39;&#39;" onblur="this.placeholder=&#39;Name/Title.&#39;">
+		<br>       
+		<br>
+<textarea placeholder="Write something.." onfocus="this.placeholder=&#39;&#39;" onblur="this.placeholder=&#39;Write something..&#39;" style="height:340px"></textarea>
+<br> <input id="files" type="file" multiple="">
+        <output id="result">
+</output></div>
+
+<div id="misc" class="tabcontent" style="display: block;">
+Goal<br>
+        <select>
+          <option>Sketch</option>
+          <option>Flat colors</option>
+          <option>Full Rendering</option>
+        </select>
+		<br>
+		<br>Timeline<select>
+          <option>Current</option>
+          <option>Past</option>
+          <option>Future</option>
+		  <option>Alternate Timeline</option>
+        </select>
+		<br>
+<br>Theme<br>
+        <input type="text" placeholder="Scifi, Cyberpunk, Steampunk, Gothic, Fantasy, etc..." onfocus="this.placeholder=&#39;&#39;" onblur="this.placeholder=&#39;Scifi, Cyberpunk, Steampunk, Gothic, Fantasy, etc...&#39;" <="" text="">
+		<br>
+		<br>Mood<br>
+        <input type="text">
+		<br>
+<br>Art-Style<br>
+        <input type="text">
+		<br>
+		<br>Level of details<br>
+        <select>
+          <option>Simple</option>
+          <option>Complex</option>
+          <option>Mix / Inbetween</option>
+        </select>
+		<br>
+		<br>Mode<br>
+        <select>
+          <option>Portrait</option>
+          <option>Landscape</option>
+          <option>Custom</option>
+        </select>
+		<br>
+		<br>Camera shot<br>
+        <select>
+           <option title="(aka Extreme Wide Shot)  Used to show the subject from a distance, or the area in which the scene is taking place. This type of shot is particularly useful for establishing a scene in terms of time and place, as well as a character’s physical or emotional relationship to the environment and elements within it. The character doesn’t necessarily have to be viewable in this shot.">Extreme Long Shot</option>
+           <option title="(aka Wide Shot)  Shows the subject from top to bottom; for a person, this would be head to toes, though not necessarily filling the frame. The character becomes more of a focus than an Extreme Long Shot, but the shot tends to still be dominated by the scenery. This shot often sets the scene and our character’s place in it. This can also serve as an Establishing Shot, in lieu of an Extreme Long Shot.">Long Shot</option>
+           <option title="Frames character from head to toes, with the subject roughly filling the frame. The emphasis tends to be more on action and movement rather than a character’s emotional state.">Full Shot</option>
+          <option title="(aka 3/4 Shot)  Intermediate between Full Shot and Medium Shot. Shows subject from the knees up.">Medium Long Shot</option>
+          <option title="(aka American Shot)  A variation of a Medium Shot, this gets its name from Western films from the 1930s and 1940s, which would frame the subject from mid-thighs up to fit the character’s gun holsters into the shot.">Cowboy Shot</option>
+          <option title="Shows part of the subject in more detail. For a person, a medium shot typically frames them from about waist up. This is one of the most common shots seen in films, as it focuses on a character (or characters) in a scene while still showing some environment.">Medium Shot</option>
+          <option title="Falls between a Medium Shot and a Close-Up, generally framing the subject from chest or shoulder up.">Medium Close-Up</option>
+          <option title="Fills the screen with part of the subject, such as a person’s head/face. Framed this tightly, the emotions and reaction of a character dominate the scene.">Close-Up</option>
+          <option title="A variant of a Close-Up, this shot frames the subject’s face from above the eyebrows to below the mouth">Choker</option>
+          <option title="Emphasizes a small area or detail of the subject, such as the eye(s) or mouth. An Extreme Close Up of just the eyes is sometimes called an Italian Shot, getting its name from Sergio Leone’s Italian-Western films that popularized it.">Extreme Close Up</option>
+          
+        </select>
+		<br>
+		<br>Shots indicating camera angle/placement<br>
+        <select>
+		<option title="Usually the first shot of a scene, this is used to establish the location and environment. It can also be used to establish mood and give the audience visual clues regarding the time (night/day, year) and the general situation. Because they need to provide a great deal of information, Establishing Shots are usually Extreme Long Shots or Long Shots.">Establishing Shot</option>
+          <option title="Shot taken with the camera approximately at human eye level, resulting in a neutral effect on the audience.">Eye Level</option>
+          <option title="Subject is photographed from above eye level. This can have the effect of making the subject seem vulnerable, weak, or frightened.">High Angle</option>
+          <option title="Subject is photographed from below eye level. This can have the effect of making the subject look powerful, heroic, or dangerous.">Low Angle</option>
+          <option title="Shot in which the camera is set at an angle on its roll axis so that the horizon line is not level. It is often used to show a disoriented or uneasy psychological state.">Dutch Angle/Tilt</option>
+          <option title="A popular shot where a subject is shot from behind the shoulder of another, framing the subject anywhere from a Medium to Close-Up. The shoulder, neck, and/or back of the head of the subject facing away from the camera remains viewable, making the shot useful for showing reactions during conversations. It tends to place more of an emphasis on the connection between two speakers rather than the detachment or isolation that results from single shots.">Over-the-Shoulder Shot</option>
+          <option title="(aka Top Shot)  A high-angle shot that’s taken from directly overhead and from a distance. The shot gives the audience a wider view and is useful for showing direction and that the subject is moving, to highlight special relations, or reveal to the audience elements outside the boundaries of the character’s awareness. The shot is often taken from on a crane or helicopter.">Bird’s-Eye View</option>
+          <option title="Shot intended to mimic what a particular character in a scene is seeing. This puts the audience directly into the head of the character, letting them experience their emotional state. Common examples are of a character waking up, drifting into unconsciousness, or looking through a scope or binoculars.">Point of View Shot (POV)</option>
+          <option title="A shot in which two subjects appear in the frame.">Two Shot</option>
+          <option title="Shows a character’s reaction to the shot that has preceded it.">Reaction Shot</option>
+          <option title="A shot taken from an angle roughly 180 degrees opposite of the previous shot. The term is commonly used during conversation, indicating a reverse Over-the-Shoulder Shot, for example.">Reverse Angle Shot</option>
+          
+        </select>
+		<br>
+		<br>Shade/Render style<br>
+        <select>
+          <option>Soft Shading</option>
+          <option>Hard Shading</option>
+          <option>Mix</option>
+        </select>
+		<br>
+		<br>Color Harmony<br>
+        <select>
+		<option>Monochromatic</option>
+		 <option>Complementary colors</option>
+		 <option>Double-Complementary colors</option>
+          <option>Split-complementary colors</option>
+          <option>Triads</option>
+          <option>Analogous colors</option>
+		  
+        </select>
+		<br>
+		<br>Color/Grayscale Value use limit<br>
+        <select>
+		 <option>base value only (1 value/flat)</option>
+          <option>limit 2 value (base value+1)</option>
+          <option>limit 3 value (base value+2)</option>
+          <option>limit 4 value (base value+3)</option>
+		  <option>unlimited</option>
+        </select>
+		<br>
+		
+		<br>Note<br>
+        <input type="text" placeholder="" onfocus="this.placeholder=&#39;&#39;" onblur="this.placeholder=&#39;Anything else?&#39;" <="" text="">
+		<br>
+</div>
+		<br>
+
+<div class="clearfix"></div>
+
+
+<br>
+<div class="col-sm-4">
+<h4 class="noprint">Once done&gt; click and choose "Save as PDF" (or save to Google Drive)</h4>
+<h5 class="noprint">*per selection</h5>
+
+<button class="noprint" onclick="myFunction()"><h4>Print/Save</h4></button>
+</div>
+<br>
+<br>
+
+<script>
+function myFunction() {
+  window.print();
+}
+</script>
+
+
+<script>
+function openCity(evt, cityName) {
+  var i, tabcontent, tablinks;
+  tabcontent = document.getElementsByClassName("tabcontent");
+  for (i = 0; i < tabcontent.length; i++) {
+    tabcontent[i].style.display = "none";
+  }
+  tablinks = document.getElementsByClassName("tablinks");
+  for (i = 0; i < tablinks.length; i++) {
+    tablinks[i].className = tablinks[i].className.replace(" active", "");
+  }
+  document.getElementById(cityName).style.display = "block";
+  evt.currentTarget.className += " active";
+}
+</script>
+<script type="text/javascript">
+function preview_image(event) 
+{
+ var reader = new FileReader();
+ reader.onload = function()
+ {
+  var output = document.getElementById('output_image');
+  output.src = reader.result;
+ }
+ reader.readAsDataURL(event.target.files[0]);
+}
+</script>
+   
+<script>$(function() {
+    // Multiple images preview in browser
+    var imagesPreview = function(input, placeToInsertImagePreview) {
+
+        if (input.files) {
+            var filesAmount = input.files.length;
+
+            for (i = 0; i < filesAmount; i++) {
+                var reader = new FileReader();
+
+                reader.onload = function(event) {
+                    $($.parseHTML('<img>')).attr('src', event.target.result).appendTo(placeToInsertImagePreview);
+                }
+
+                reader.readAsDataURL(input.files[i]);
+            }
+        }
+
+    };
+
+    $('#gallery-photo-add').on('change', function() {
+        imagesPreview(this, 'div.gallery');
+    });
+});</script>
+
+<script>
+function previewImages() {
+
+  var preview = document.querySelector('#preview');
+  
+  if (this.files) {
+    [].forEach.call(this.files, readAndPreview);
+  }
+
+  function readAndPreview(file) {
+
+    // Make sure `file.name` matches our extensions criteria
+    if (!/\.(jpe?g|png|gif)$/i.test(file.name)) {
+      return alert(file.name + " is not an image");
+    } // else...
+    
+    var reader = new FileReader();
+    
+    reader.addEventListener("load", function() {
+      var image = new Image();
+      image.height = 200;
+      image.title  = file.name;
+      image.src    = this.result;
+      preview.appendChild(image);
+    });
+    
+    reader.readAsDataURL(file);
+    
+  }
+
+}
+
+document.querySelector('#file-input').addEventListener("change", previewImages);
+</script>   
+
+<script>window.onload = function(){
+        
+    //Check File API support
+    if(window.File && window.FileList && window.FileReader)
+    {
+        var filesInput = document.getElementById("files");
+        
+        filesInput.addEventListener("change", function(event){
+            
+            var files = event.target.files; //FileList object
+            var output = document.getElementById("result");
+            
+            for(var i = 0; i< files.length; i++)
+            {
+                var file = files[i];
+                
+                //Only pics
+                if(!file.type.match('image'))
+                  continue;
+                
+                var picReader = new FileReader();
+                
+                picReader.addEventListener("load",function(event){
+                    
+                    var picFile = event.target;
+                    
+                    var div = document.createElement("div");
+                    
+                    div.innerHTML = "<img class='thumbnail' src='" + picFile.result + "'" +
+                            "title='" + picFile.name + "'/> <a href='#' class='remove_pict'>X</a>";
+                    
+                    output.insertBefore(div,null);   
+                    div.children[1].addEventListener("click", function(event){
+                       div.parentNode.removeChild(div);
+                    });         
+                
+                });
+                
+                 //Read the image
+                picReader.readAsDataURL(file);
+            }                               
+           
+        });
+    }
+    else
+    {
+        console.log("Your browser does not support File API");
+    }
+}
+    </script>
+
+
+<script>$(document).ready(function() { 
+  function readURL(input) {
+    if (input.files && input.files[0]) {
+      var reader = new FileReader();
+
+      reader.onload = function (e) {
+        $('#image_upload_preview1').attr('src', e.target.result);
+      }
+
+      reader.readAsDataURL(input.files[0]);
+    }
+  }
+  $("#inputFile1").change(function () {
+    readURL(this);
+  });
+});
+$(document).ready(function() { 
+  function readURLs(input) {
+    if (input.files && input.files[0]) {
+      var reader = new FileReader();
+
+      reader.onload = function (e) {
+        $('#image_upload_preview2').attr('src', e.target.result);
+      }
+
+      reader.readAsDataURL(input.files[0]);
+    }
+  }
+  $("#inputFile2").change(function () {
+    readURLs(this);
+  });
+});
+$(document).ready(function() { 
+  function readURLs(input) {
+    if (input.files && input.files[0]) {
+      var reader = new FileReader();
+
+      reader.onload = function (e) {
+        $('#image_upload_preview3').attr('src', e.target.result);
+      }
+
+      reader.readAsDataURL(input.files[0]);
+    }
+  }
+  $("#inputFile3").change(function () {
+    readURLs(this);
+  });
+});
+$(document).ready(function() { 
+  function readURLs(input) {
+    if (input.files && input.files[0]) {
+      var reader = new FileReader();
+
+      reader.onload = function (e) {
+        $('#image_upload_preview4').attr('src', e.target.result);
+      }
+
+      reader.readAsDataURL(input.files[0]);
+    }
+  }
+  $("#inputFile4").change(function () {
+    readURLs(this);
+  });
+});
+$(document).ready(function() { 
+  function readURLs(input) {
+    if (input.files && input.files[0]) {
+      var reader = new FileReader();
+
+      reader.onload = function (e) {
+        $('#image_upload_preview5').attr('src', e.target.result);
+      }
+
+      reader.readAsDataURL(input.files[0]);
+    }
+  }
+  $("#inputFile5").change(function () {
+    readURLs(this);
+  });
+});
+$(document).ready(function() {
+        $(".input-file").on("change", function(){
+            if($(this).val() == "") {
+                $(this).parent().find(".image-upload-footer").css({"display": "none"});
+            } else {
+            $(this).parent().find(".image-upload-footer").css({"display": "block"});
+            }
+        });
+        $(".reset").click(function(){
+            $(this).closest(".image-upload").parent().find(".input-file").val("").trigger('change');
+            
+            var newImg=$(this).attr('custattr');
+             
+           $("#"+$(this).closest(".image-upload").parent().find(".img-responsive").attr('id')).attr("src",newImg);
+        }); 
+    });   </script>
+
+ 
+</body></html>
